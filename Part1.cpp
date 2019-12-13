@@ -60,20 +60,20 @@ public:
             cin>>ID;}
         cout<<"\n\t Enter Customer's name : ";
         cin>>name;
-        cout<<"\n\t Enter Customer;s alloted Room No :";
+        cout<<"\n\t Enter Customer's alloted Room No :";
         cin>>roomNo;
         if(roomNo>50)
         {
-            cout<<"\n\tYou have Entered Invalid Room Number"<<endl;
-            cout<<"\n\tKindly Enter Again between Room Numbers(1 to 50):\n";
+            cout<<"\n\tYou have Entered Invalid Room Number :"<<endl;
+            cout<<"\n\tKindly Enter Again between Room Numbers(1 to 50) :\n";
             cin>>roomNo;
         }
         for(int i=0;i<counter;i++)
         {
             if(room_array[i]==roomNo)
             {
-                cout<<"\nThis Room is already occupied"<<endl;
-                cout<<"\nKindly enter any other Room Number !:";
+                cout<<"\nThis Room is already occupied :"<<endl;
+                cout<<"\nKindly Enter any other Room Number !:";
                 cin>>roomNo;
                 break;
             }

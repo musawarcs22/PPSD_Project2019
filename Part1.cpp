@@ -1,13 +1,11 @@
-
-/////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////// HOTEL MANAGEMENT
 #include <iostream>
 #include<fstream>
 #include<stdio.h>
 using namespace std;
-class Hotel
+class Hotel            // Start
 {
-private:               //Atributes of class
+private:               //Attributes of class Hotel
     int roomNo;
     int ID;
     int charges;
@@ -16,16 +14,16 @@ public:
     Hotel()             //constructor
     {
                         //initilize
-        ID=0;
-        name="no_name";
-        roomNo=0;
-        charges=0;
+        ID = 0;
+        name = "no_name";
+        roomNo = 0;
+        charges = 0;
     }
 //function to take input from user
     void Enter_Data()
     {
         int id;
-        cout<<"\nKindly Enter ID: ";
+        cout<<"\n\tKindly Enter Customer's ID: \n";
         cin>>id;
         int counter=0;
         int id_array[1000];               //array of storing customers id
@@ -55,38 +53,36 @@ public:
                     else
                         ID=id;
                 }
-
-
             }
             if(counter1==1)
-            {cout<<"you entered invalid id"<<endl;
-            cout<<"kindly again enter your id  :";
+            {cout<<"\n\tYou have Entered an Invalid ID !<---------------- \n"<<endl;
+            cout<<"------------> Kindly Enter Again : !";
             cin>>ID;}
-        cout<<" Enter name : ";
+        cout<<"\n\t Enter Customer's name : ";
         cin>>name;
-        cout<<" Enter room_no :";
+        cout<<"\n\t Enter Customer;s alloted Room No :";
         cin>>roomNo;
         if(roomNo>50)
         {
-            cout<<"You entered invalid Room Number"<<endl;
-            cout<<"Kindly Enter again Room Number(1_50) :";
+            cout<<"\n\tYou have Entered Invalid Room Number"<<endl;
+            cout<<"\n\tKindly Enter Again between Room Numbers(1 to 50):\n";
             cin>>roomNo;
         }
         for(int i=0;i<counter;i++)
         {
             if(room_array[i]==roomNo)
             {
-                cout<<"This Room is already occupied"<<endl;
-                cout<<"kindly enter any other room :";
+                cout<<"\nThis Room is already occupied"<<endl;
+                cout<<"\nKindly enter any other Room Number !:";
                 cin>>roomNo;
                 break;
             }
         }
-        cout<<" How much you will charge :";
+        cout<<" How much you will charge ?:";
         cin>>charges;
         int y= allocate_room();
     }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //function to show data that you entered
     void show_Data()
     {

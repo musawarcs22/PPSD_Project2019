@@ -194,15 +194,25 @@ int main()
     int n;
     while(choice!='z')
         {
+            cout<<"\n\t-----------------------------------------------------------------------\t\n";
+            cout<<"\n\t------------------------------------------------------------------\t\n";
             cout<<"\n\t-------------------------------------------------------------\t\n";
-            cout<<" \t\tEnter E to Enter new Customer's Record(Data) "<<endl;
-            cout<<" \t\tEnter S for Search specified Customer's Record(Data)"<<endl;
-            cout<<" \t\tEnter R to allocate Room to new Customer"<<endl;
-            cout<<" \t\tEnter V to view all Hotel's Record"<<endl;
-            cout<<" \t\tEnter Z to exit from Program !"<<endl;
-            cout<<" \t\tEnter D to Remove an old Customer's Record(Data) "<<endl;
+            cout<<"\n\t--------------------------------------------------------\t\n";
+            cout<<"\n\t---------------------------------------------------\t\n";
+            cout<<"\n\t----------------------------------------------\t\n";
+            cout<<" \t\tEnter----------> E to Enter new Customer's Record(Data) "<<endl;
+            cout<<" \t\tEnter----------> S for Search specified Customer's Record(Data)"<<endl;
+            cout<<" \t\tEnter----------> R to allocate Room to new Customer"<<endl;
+            cout<<" \t\tEnter----------> V to view all Hotel's Record"<<endl;
+            cout<<" \t\tEnter----------> D to Remove an old Customer's Record(Data) "<<endl;
+            cout<<" \t\tEnter----------> Z to exit from Program !"<<endl;
             cout<<" \t\tWhich operation Do You Want ? ";
+            cout<<"\n\t----------------------------------------------\t\n";
+            cout<<"\n\t---------------------------------------------------\t\n";
+            cout<<"\n\t--------------------------------------------------------\t\n";
             cout<<"\n\t-------------------------------------------------------------\t\n";
+            cout<<"\n\t------------------------------------------------------------------\t\n";
+            cout<<"\n\t-----------------------------------------------------------------------\t\n";
             cin>>choice;
             if(choice=='E'||choice=='e')
                 {
@@ -247,7 +257,7 @@ int main()
             else if(choice=='d'||choice=='D')
                 {
                     quit='z';
-                    while(quit!='q')
+                    while(quit!='q' || quit!='Q')
                         {
                             cout<<"Enter ID of That customer That you want ----->Remove  :";
                             cin>>n;
@@ -260,7 +270,7 @@ int main()
                         }
                 }
             else
-                cout<<"\n\t--------------> Invalid Choice !!!!!!\n"<<endl;
+                cout<<"\n\t--------------> Invalid Choice <----------------\n"<<endl;
 
 
         }

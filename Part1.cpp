@@ -1,4 +1,4 @@
-///////////////////////////////// HOTEL MANAGEMENT
+///////////////////////////////// HOTEL MANAGEMENT//////////////////////////////////////////////////////////////////
 #include <iostream>
 #include<fstream>
 #include<stdio.h>
@@ -11,9 +11,10 @@ private:               //Attributes of class Hotel
     int charges;
     string name;
 public:
+
     Hotel()             //constructor
     {
-                        //initilize
+        //initilize
         ID = 0;
         name = "no_name";
         roomNo = 0;
@@ -42,42 +43,44 @@ public:
                     }
                 fin.close();
             }
-            int counter1=0;
-            for(int i=0;i<counter;i++)
+        int counter1=0;
+        for(int i=0; i<counter; i++)
             {
                 if(id_array[i]==id)
-                {
-                    counter1++;
-                    if(counter1==1)
-                        break;
-                    else
-                        ID=id;
-                }
+                    {
+                        counter1++;
+                        if(counter1==1)
+                            break;
+                        else
+                            ID=id;
+                    }
             }
-            if(counter1==1)
-            {cout<<"\n\tYou have Entered an Invalid ID !<---------------- \n"<<endl;
-            cout<<"------------> Kindly Enter Again : !";
-            cin>>ID;}
+        if(counter1==1)
+            {
+                cout<<"\n\tYou have Entered an Invalid ID !<---------------- \n"<<endl;
+                cout<<"------------> Kindly Enter Again : !";
+                cin>>ID;
+            }
         cout<<"\n\t Enter Customer's name : ";
         cin>>name;
         cout<<"\n\t Enter Customer's alloted Room No :";
         cin>>roomNo;
         if(roomNo>50)
-        {
-            cout<<"\n\tYou have Entered Invalid Room Number :"<<endl;
-            cout<<"\n\tKindly Enter Again between Room Numbers(1 to 50) :\n";
-            cin>>roomNo;
-        }
-        for(int i=0;i<counter;i++)
-        {
-            if(room_array[i]==roomNo)
             {
-                cout<<"\nThis Room is already occupied :"<<endl;
-                cout<<"\nKindly Enter any other Room Number !:";
+                cout<<"\n\tYou have Entered Invalid Room Number :"<<endl;
+                cout<<"\n\tKindly Enter Again between Room Numbers(1 to 50) :\n";
                 cin>>roomNo;
-                break;
             }
-        }
+        for(int i=0; i<counter; i++)
+            {
+                if(room_array[i]==roomNo)
+                    {
+                        cout<<"\nThis Room is already occupied :"<<endl;
+                        cout<<"\nKindly Enter any other Room Number !:";
+                        cin>>roomNo;
+                        break;
+                    }
+            }
         cout<<" How much you will charge ?:";
         cin>>charges;
         int y= allocate_room();
@@ -86,7 +89,7 @@ public:
 //function to show data that you entered
     void show_Data()
     {
-        cout<<"CNIC       NAME       RoomNO      Charges"<<endl;
+        cout<<"\nCNIC       NAME       RoomNO      Charges"<<endl;
         cout<<ID<<"         "<<name<<"         "<<roomNo<<"         "<<charges<<endl;
     }
 
@@ -95,7 +98,7 @@ public:
     {
         if(ID==0 && charges==0)
             {
-                cout<<"This Room is vacant"<<endl;
+                cout<<"\n\tThis Room is vacant"<<endl;
                 return 0;
             }
         else
@@ -117,7 +120,7 @@ public:
         ifstream fin;
         fin.open("Record.txt",ios::in);
         if(!fin)
-            cout<<"File not Found"<<endl;
+            cout<<"\n\t\tFile not Found------------>"<<endl;
         else
             {
                 cout<<"\n\t There is complete Record of our customers"<<endl;
@@ -154,7 +157,7 @@ public:
 
                     }
                 if(counter==0)
-                  cout<<"\n\tDAta is not present here"<<endl<<endl;
+                    cout<<"\n\tDAta is not present here"<<endl<<endl;
                 return false;
             }
 
@@ -182,7 +185,8 @@ public:
                 rename("temp.txt","Record.txt");
             }
     }
-};
+};/////////////////////////// Class Ends Here !!!
+
 int main()
 {
     Hotel obj;
@@ -217,7 +221,7 @@ int main()
                         {
                             obj.Enter_Data();
                             obj.show_Data();
-                            cout<<"if you want to enter more number enter any key to quit enter q :";
+                            cout<<"\n \tEnter q to quit and any key to continue -------->\n";
                             cin>>quit;
                         }
                 }
@@ -229,7 +233,7 @@ int main()
                             cout<<"Enter ID of That customer That you want Record :";
                             cin>>n;
                             obj.search_data(n);
-                            cout<<"if you want to enter more number enter any key to quit enter q :";
+                            cout<<"\n \tEnter q to quit and any key to continue -------->\n";
                             cin>>quit;
 
                         }
@@ -238,9 +242,9 @@ int main()
             else if(choice=='R'||choice=='r')
                 {
                     if(obj.allocate_room()==1)
-                        cout<<"Room Has been Alloted"<<endl;
+                        cout<<"\nRoom Has been Alloted"<<endl;
                     if(obj.allocate_room()==0)
-                        cout<<"Room is Vacant for customers"<<endl;
+                        cout<<"\nRoom is Vacant for customers"<<endl;
                 }
             else if(choice=='V'||choice=='v')
                 {
@@ -255,10 +259,10 @@ int main()
                     quit='z';
                     while(quit!='q' || quit!='Q')
                         {
-                            cout<<"Enter ID of That customer That you want ----->Remove  :";
+                            cout<<"Enter ID of That customer That you want to----->Remove  :";
                             cin>>n;
-                            if(obj.search_data(n) == true)//////////////////////////////////////////////
-                            obj.delet_data(n);
+                            if(obj.search_data(n) == true)
+                                obj.delet_data(n);
                             else
                                 cout<<"\n\t\t-------->NOT FOUND !\n ";
                             cout<<"Enter q to quit Enter c to continue !";
@@ -267,9 +271,6 @@ int main()
                 }
             else
                 cout<<"\n\t--------------> Invalid Choice <----------------\n"<<endl;
-
-
         }
-
     return 0;
 }

@@ -1,18 +1,21 @@
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include<fstream>
 #include<stdio.h>
 using namespace std;
 class Hotel
 {
-private:            //Atributes of class
+private:               //Atributes of class
     int roomNo;
     int ID;
     int charges;
     string name;
 public:
-    Hotel()      //constructor
+    Hotel()             //constructor
     {
-        //initilize
+                        //initilize
         ID=0;
         name="no_name";
         roomNo=0;
@@ -21,12 +24,64 @@ public:
 //function to take input from user
     void Enter_Data()
     {
+        int id;
         cout<<"\nKindly Enter ID: ";
-        cin>>ID;
+        cin>>id;
+        int counter=0;
+        int id_array[1000];               //array of storing customers id
+        int room_array[50];               //array of storing roomNo
+        ifstream fin;
+        fin.open("Record.txt",ios::in);
+        if(!fin)
+            cout<<"File not Found"<<endl;
+        else
+            {
+                while(fin>>ID>>name>>roomNo>>charges)
+                    {
+                        id_array[counter]=ID;
+                        room_array[counter]=roomNo;
+                        counter++;
+                    }
+                fin.close();
+            }
+            int counter1=0;
+            for(int i=0;i<counter;i++)
+            {
+                if(id_array[i]==id)
+                {
+                    counter1++;
+                    if(counter1==1)
+                        break;
+                    else
+                        ID=id;
+                }
+
+
+            }
+            if(counter1==1)
+            {cout<<"you entered invalid id"<<endl;
+            cout<<"kindly again enter your id  :";
+            cin>>ID;}
         cout<<" Enter name : ";
         cin>>name;
         cout<<" Enter room_no :";
         cin>>roomNo;
+        if(roomNo>50)
+        {
+            cout<<"You entered invalid Room Number"<<endl;
+            cout<<"Kindly Enter again Room Number(1_50) :";
+            cin>>roomNo;
+        }
+        for(int i=0;i<counter;i++)
+        {
+            if(room_array[i]==roomNo)
+            {
+                cout<<"This Room is already occupied"<<endl;
+                cout<<"kindly enter any other room :";
+                cin>>roomNo;
+                break;
+            }
+        }
         cout<<" How much you will charge :";
         cin>>charges;
         int y= allocate_room();
@@ -94,16 +149,16 @@ public:
             {
                 while(fin>>ID>>name>>roomNo>>charges)
                     {
-                        if(id==ID)                  //searching BY ID
+                        if(id==ID)                      //searching BY ID
                             {
                                 show_Data();
-                                //counter ++;
+                                counter ++;
                                 return true;
                             }
 
                     }
-                //if(counter==0)
-                //  cout<<"DAta is not present here"<<endl;
+                if(counter==0)
+                  cout<<"\n\tDAta is not present here"<<endl<<endl;
                 return false;
             }
 

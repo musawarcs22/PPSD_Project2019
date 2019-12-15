@@ -133,6 +133,22 @@ case 1:
 
 
 
+case 2:
+
+    	system("cls");
+	cout<<"\n";
+    	cout<<"\t\t ================================================\n";
+	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
+	cout<<"\t\t ================================================\n\n\n";
+	cout <<"\nAdd Your Complaint Details\n";
+	cout <<"________________________________\n\n";
+	cin >> com;
+	cout<<"=============================================================\n";
+	cout <<"\Thanks for your Cordination, we will try to fix every issue\n";
+	cout<<"=============================================================\n";
+
+	break;
+
 
 
 }

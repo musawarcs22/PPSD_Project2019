@@ -13,6 +13,7 @@ private:               //Attributes of class Hotel
     int ID;
     int charges;
     string name;
+    string com;
 public:
 
     Hotel()             //constructor
@@ -98,10 +99,10 @@ public:
 //cpmplaint
 
 void complaint()
-{
+{ int a;
 	cout<<"\n";
     	cout<<"\t\t ================================================\n";
-	cout<<"\t\t|   Complaint Management System - TRAVEL AGENCY |\n";
+	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
 	cout<<"\t\t ================================================\n\n\n";
 
 	cout<<"\t\t-------------------------------------------------\n";
@@ -111,8 +112,31 @@ void complaint()
 	cout<<"\t\t|\t2. Administrator \t\t\t|\n";
 	cout<<"\t\t-------------------------------------------------\n";
 	cout<<"\t\t-------------------------------------------------\n";
-	cout<<"\t\t|\t3. EXIT \t\t\t\t|\n";
-	cout<<"\t\t-------------------------------------------------\n\n";
+	cin >> a;
+
+switch(a)
+{
+case 1:
+    	system("cls");
+	cout<<"\n";
+    	cout<<"\t\t ================================================\n";
+	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
+	cout<<"\t\t ================================================\n\n\n";
+	cout <<"\nAdd Your Complaint Details\n";
+	cout <<"________________________________\n\n";
+	cin >> com;
+	cout<<"=============================================================\n";
+	cout <<"\Thanks for your Cordination, we will try to fix every issue\n";
+	cout<<"=============================================================\n";
+
+	break;
+
+
+
+
+
+}
+
 }
 
 

@@ -2,6 +2,9 @@
 #include <iostream>
 #include<fstream>
 #include<stdio.h>
+#include <string>
+#include <cctype>
+#include <cstdlib>
 using namespace std;
 class Hotel            // Start
 {
@@ -190,6 +193,8 @@ public:
 int main()
 {
     Hotel obj;
+
+    system("COLOR 79");
     char choice,quit;
     int n;
     while(choice!='z')
@@ -272,5 +277,8 @@ int main()
             else
                 cout<<"\n\t--------------> Invalid Choice <----------------\n"<<endl;
         }
+
+
+
     return 0;
 }

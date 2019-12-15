@@ -98,8 +98,39 @@ public:
     }
 //cpmplaint
 
+
+
+int writeFile (string a)
+{
+
+  ofstream myfile;
+  myfile.open ("complaint.txt");
+  myfile << a;
+
+  myfile.close();
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void complaint()
 { int a;
+string b;
 	cout<<"\n";
     	cout<<"\t\t ================================================\n";
 	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
@@ -122,9 +153,10 @@ case 1:
     	cout<<"\t\t ================================================\n";
 	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
 	cout<<"\t\t ================================================\n\n\n";
-	cout <<"\nAdd Your Complaint Details\n";
+	cout <<"\nAdd Your Complaint Details but place underscores instead of spaces\n";
 	cout <<"________________________________\n\n";
-	cin >> com;
+	cin >> b;
+	writeFile(b);
 	cout<<"=============================================================\n";
 	cout <<"\Thanks for your Cordination, we will try to fix every issue\n";
 	cout<<"=============================================================\n";
@@ -140,9 +172,10 @@ case 2:
     	cout<<"\t\t ================================================\n";
 	cout<<"\t\t|   Complaint Management System - Hotel Management |\n";
 	cout<<"\t\t ================================================\n\n\n";
-	cout <<"\nAdd Your Complaint Details\n";
+	cout <<"\nAdd Your Complaint Details but place underscores instead of spaces\n";
 	cout <<"________________________________\n\n";
-	cin >> com;
+	cin >> b;
+    writeFile(b);
 	cout<<"=============================================================\n";
 	cout <<"\Thanks for your Cordination, we will try to fix every issue\n";
 	cout<<"=============================================================\n";

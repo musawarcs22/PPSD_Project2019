@@ -95,6 +95,51 @@ public:
         cout<<"\nCNIC       NAME       RoomNO      Charges"<<endl;
         cout<<ID<<"         "<<name<<"         "<<roomNo<<"         "<<charges<<endl;
     }
+//cpmplaint
+
+void complaint()
+{
+	cout<<"\n";
+    	cout<<"\t\t ================================================\n";
+	cout<<"\t\t|   Complaint Management System - TRAVEL AGENCY |\n";
+	cout<<"\t\t ================================================\n\n\n";
+
+	cout<<"\t\t-------------------------------------------------\n";
+	cout<<"\t\t|\t1. Customer \t\t\t\t|\n";
+	cout<<"\t\t-------------------------------------------------\n";
+	cout<<"\t\t-------------------------------------------------\n";
+	cout<<"\t\t|\t2. Administrator \t\t\t|\n";
+	cout<<"\t\t-------------------------------------------------\n";
+	cout<<"\t\t-------------------------------------------------\n";
+	cout<<"\t\t|\t3. EXIT \t\t\t\t|\n";
+	cout<<"\t\t-------------------------------------------------\n\n";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //program to store customer data
     int allocate_room()
@@ -190,9 +235,32 @@ public:
     }
 };/////////////////////////// Class Ends Here !!!
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
     Hotel obj;
+
 
     /*****************************************************************************************************************
                                         Single Borders Box
@@ -241,6 +309,8 @@ cout << char(192);      for(int i=0; i<21; i++){cout << char(196);}      cout <<
             cout<<" \t\tEnter----------> V to view all Hotel's Record"<<endl;
             cout<<" \t\tEnter----------> D to Remove an old Customer's Record(Data) "<<endl;
             cout<<" \t\tEnter----------> Z to exit from Program !"<<endl;
+            cout<<" \t\tEnter----------> C to Complaints !"<<endl;
+
             cout<<" \t\tWhich operation Do You Want ? ";
             cout<<"\n\t----------------------------------------------\t\n";
 
@@ -285,6 +355,12 @@ cout << char(192);      for(int i=0; i<21; i++){cout << char(196);}      cout <<
                 {
                     cout<<"\n\t\t-------- \tThank You\t --------------\n"<<endl;
                 }
+            else if(choice=='c'||choice=='C')
+                {
+                    obj.complaint();
+                    break;
+                }
+
             else if(choice=='d'||choice=='D')
                 {
                     quit='z';

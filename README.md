@@ -20,6 +20,8 @@ Different functionalities of our system are listed below:-
 4)Displaying the list of customers
 5)Complaint Section
 
+We have achieved all of the above functionality with this the help of C++ on a customized.
+
 We have worked together in separate branches as well in master branch. 
 We efficiently performed merging of separate branches, push operations, commits, pull operations and file handling, etc.
 We have properly learned to use the Git and Git hub with the help of this project.
